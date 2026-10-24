@@ -12,7 +12,7 @@ body:
     id: device
     attributes:
       label: Device
-      options: [Mi Band 10 Pro, Mi Band 9 Pro, Mi Band 8 Pro, Other]
+      options: [Mi Band 10 Pro, Mi Band 9 Pro, Mi Band 8 Pro, Mi Band 10, Mi Band 9, Redmi Watch 4, Redmi Watch 6, Xiaomi Watch S3, Xiaomi Watch S4, Other]
     validations: { required: true }
   - type: input
     id: firmware

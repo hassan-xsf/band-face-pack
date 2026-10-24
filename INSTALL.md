@@ -1,4 +1,4 @@
-# Installing watchfaces on a Mi Band 10 Pro, 9 Pro or 8 Pro
+# Installing watchfaces on a Xiaomi band or watch
 
 This uses **Gadgetbridge**: free and open source, with no modded Mi Fitness
 and no cracked apps.
@@ -6,7 +6,7 @@ and no cracked apps.
 You need:
 - an Android phone with Gadgetbridge from [F-Droid](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/)
 - the band's **auth key** (one-time, below)
-- a `.face` file for your device from `faces/`, for example `faces/band10pro/lua_stride.face`
+- a `.face` file from your device's folder in `faces/`, for example `faces/band10pro/lua_stride.face`
 
 ---
 
