@@ -1,5 +1,5 @@
-name: Bug report
-description: A face or app doesn't work right
+name: Bug report / device report
+description: A face or app doesn't work right, or you tested it on a new device
 labels: [bug]
 body:
   - type: dropdown
@@ -7,6 +7,12 @@ body:
     attributes:
       label: Which face or app?
       options: [Stride, Flappy Bird, Tic Tac Toe, Calculator, Expenses, Native app]
+    validations: { required: true }
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options: [Mi Band 10 Pro, Mi Band 9 Pro, Mi Band 8 Pro, Other]
     validations: { required: true }
   - type: input
     id: firmware
