@@ -1,0 +1,9 @@
+name: Face or app idea
+description: Suggest a new watchface, app or feature
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should it do?
+    validations: { required: true }

@@ -1,0 +1,22 @@
+name: Bug report
+description: A face or app doesn't work right
+labels: [bug]
+body:
+  - type: dropdown
+    id: face
+    attributes:
+      label: Which face or app?
+      options: [Stride, Flappy Bird, Tic Tac Toe, Calculator, Expenses, Native app]
+    validations: { required: true }
+  - type: input
+    id: firmware
+    attributes:
+      label: Band firmware
+      placeholder: "3.201.026 (Settings → About)"
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: Screenshots or a photo of the band help a lot.
+    validations: { required: true }
