@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xiaomi Watch Faces</title>
+<meta name="description" content="Free watchfaces, games and tools for Xiaomi bands and watches: pick your watch, pick what you want, download.">
+<meta property="og:title" content="Xiaomi Watch Faces">
+<meta property="og:description" content="Stride, Flappy Bird, Tic Tac Toe, Calculator and Expenses for 9 Xiaomi bands and watches. Free, open source.">
+<meta property="og:image" content="banner.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #090a0c; --panel: #121418; --panel2: #181b20; --line: #262a31; --text: #f2f3f5; --muted: #8e8e93;
+  --lime: #c6f432; --lime-ink: #10140a; --cyan: #38d6f5; --orange: #ff9f0a;
+}
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 Inter, system-ui, sans-serif; }
+a { color: var(--cyan); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px 140px; }
+h1, h2, .display { font-family: "Chakra Petch", sans-serif; letter-spacing: .01em; }
+
+header.hero { text-align: center; padding: 48px 0 24px; }
+header.hero h1 { font-size: clamp(32px, 6vw, 56px); margin: 0; line-height: 1.05; }
+header.hero h1 span { color: var(--lime); }
+header.hero p { color: var(--muted); max-width: 620px; margin: 14px auto 0; }
+.badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+.badge { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--muted); }
+
+.step { margin-top: 40px; }
+.step-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+.step-num { font-family: "Chakra Petch"; font-weight: 700; color: var(--lime-ink); background: var(--lime);
+  border-radius: 8px; width: 30px; height: 30px; display: grid; place-items: center; flex: none; }
+.step-head h2 { margin: 0; font-size: 24px; }
+.step-head .hint { color: var(--muted); font-size: 14px; }
+.step.locked { opacity: .35; pointer-events: none; }
+
+.grid { display: grid; gap: 12px; }
+.devices { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.faces { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+
+.card { position: relative; background: var(--panel); border: 1.5px solid var(--line); border-radius: 18px; padding: 16px;
+  color: inherit; font: inherit; text-align: center; cursor: pointer; transition: border-color .15s, transform .15s, background .15s; }
+.card:hover { border-color: #3a404a; transform: translateY(-2px); }
+.card:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
+.card[aria-pressed="true"] { border-color: var(--lime); background: var(--panel2); }
+.card .name { font-weight: 600; margin-top: 10px; }
+.card .sub { color: var(--muted); font-size: 13px; }
+
+.silhouette { margin: 0 auto; background: #000; border: 5px solid #2b2f36; box-shadow: 0 0 0 1px #3a3f47; }
+.tick { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; border-radius: 50%;
+  border: 1.5px solid var(--line); display: grid; place-items: center; color: transparent; font-size: 14px; font-weight: 700; }
+.card[aria-pressed="true"] .tick { background: var(--lime); border-color: var(--lime); color: var(--lime-ink); }
+
+.face-card { text-align: left; display: flex; flex-direction: column; }
+.face-card .shot { height: 220px; display: grid; place-items: center; margin-bottom: 12px; }
+.face-card .shot img { display: block; max-height: 220px; max-width: 100%; border: 5px solid #2b2f36; background: #000; }
+.kind { display: inline-block; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em;
+  padding: 2px 8px; border-radius: 6px; background: #1f232a; color: var(--muted); margin-left: 6px; vertical-align: 2px; }
+.kind.Game { color: var(--cyan); } .kind.Tool { color: var(--orange); } .kind.Watchface { color: var(--lime); } .kind.App { color: #af82ff; }
+.face-card .about { color: var(--muted); font-size: 13.5px; margin-top: 4px; flex: 1; }
+.face-card .size { color: var(--muted); font-size: 12.5px; margin-top: 8px; font-variant-numeric: tabular-nums; }
+
+.note { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.note b { color: var(--text); }
+.subhead { font-family: "Chakra Petch"; font-size: 18px; margin: 26px 0 10px; }
+
+.bar { position: fixed; left: 0; right: 0; bottom: 0; background: rgba(9,10,12,.92); backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line); padding: 12px 16px; transform: translateY(110%); transition: transform .2s; z-index: 5; }
+.bar.show { transform: none; }
+.bar .inner { max-width: 1080px; margin: 0 auto; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.bar .sum { flex: 1; min-width: 180px; color: var(--muted); font-size: 14px; }
+.bar .sum b { color: var(--text); }
+.btn { font: 600 15px Inter, sans-serif; border-radius: 12px; padding: 12px 18px; border: 1.5px solid var(--line);
+  background: var(--panel); color: var(--text); cursor: pointer; text-decoration: none; display: inline-block; }
+.btn.primary { background: var(--lime); border-color: var(--lime); color: var(--lime-ink); }
+.btn:disabled { opacity: .4; cursor: default; }
+
+.done { display: none; }
+.done.show { display: block; }
+.done ol { margin: 8px 0 0; padding-left: 20px; }
+.done li { margin: 6px 0; }
+footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 60px; }
+.err { color: #ff6b6b; }
+@media (max-width: 520px) {
+  .devices { grid-template-columns: repeat(2, 1fr); }
+  .faces { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .face-card { padding: 12px; }
+  .face-card .shot { height: 160px; } .face-card .shot img { max-height: 160px; }
+  .face-card .about { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h1>Faces for your <span>Xiaomi</span> watch</h1>
+    <p>A running face, Flappy Bird, Tic Tac Toe, a calculator and an expense tracker. Free and open source.
+      Pick your watch, pick what you want, download, then install with Gadgetbridge.</p>
+    <div class="badges">
+      <span class="badge">9 devices</span><span class="badge">No root</span><span class="badge">No modded apps</span>
+      <span class="badge"><a id="repoLink" href="#">Source on GitHub</a></span>
+    </div>
+  </header>
+
+  <section class="step" id="step1">
+    <div class="step-head"><div class="step-num">1</div><h2>Pick your watch</h2></div>
+    <div class="grid devices" id="devices"><p class="sub">Loading…</p></div>
+  </section>
+
+  <section class="step locked" id="step2">
+    <div class="step-head"><div class="step-num">2</div><h2>Pick what you want</h2><span class="hint" id="pickHint">Tap to select</span></div>
+    <div class="grid faces" id="faces"></div>
+    <div id="appsBox"></div>
+    <div class="note" id="devNote"></div>
+  </section>
+
+  <section class="step done" id="step3">
+    <div class="step-head"><div class="step-num">3</div><h2>Install it</h2></div>
+    <div class="note">
+      <b>Downloads started.</b> If your browser asks to allow multiple downloads, say yes.
+      <ol>
+        <li>Get <a href="https://gadgetbridge.org/" target="_blank" rel="noopener">Gadgetbridge</a> on your Android phone and pair your watch (needs its auth key once:
+          <a id="installLink" href="#" target="_blank" rel="noopener">step-by-step guide</a>).</li>
+        <li>Open each <code>.face</code> file with Gadgetbridge and tap <b>Install</b>.</li>
+        <li>On the watch, long-press the watchface, swipe to the new one and tap it.</li>
+        <li id="appStep" hidden>For apps: open the installer face on the band, tap <b>Install</b>, then switch the app <b>On</b> in Settings → Manage apps.</li>
+      </ol>
+      Tip: open this page on your phone and the files land right where Gadgetbridge can open them.
+    </div>
+  </section>
+
+  <footer>
+    Made by <a href="https://github.com/hassan-xsf">Hassan</a> · built on m0tral's EasyFace and native app platform ·
+    Flappy Bird art belongs to its owners (personal use).
+  </footer>
+</div>
+
+<div class="bar" id="bar" role="region" aria-label="Download">
+  <div class="inner">
+    <div class="sum" id="sum"></div>
+    <a class="btn" id="zipBtn" href="#">All as .zip</a>
+    <button class="btn primary" id="dlBtn">Download</button>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+// owner/repo from <owner>.github.io/<repo>/, so forks link to their own releases
+const gh = location.hostname.match(/^([\w-]+)\.github\.io$/);
+const OWNER = gh ? gh[1] : "hassan-xsf";
+const REPO = (gh && location.pathname.split("/")[1]) || "miband10pro-faces";
+const REPO_URL = `https://github.com/${OWNER}/${REPO}`;
+const dl = file => `${REPO_URL}/releases/latest/download/${file}`;
+$("repoLink").href = REPO_URL;
+$("installLink").href = `${REPO_URL}/blob/main/INSTALL.md`;
+
+const kb = n => n >= 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.round(n / 1024) + " KB";
+const store = { get: k => { try { return localStorage.getItem(k); } catch { return null; } },
+                set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+let cat, dev = null, picked = new Set();
+
+function shape(d, maxH) {
+  const k = maxH / Math.max(d.h, d.w * 1.1), round = d.w === d.h && d.r * 2 >= d.w;
+  return `width:${Math.round(d.w * k)}px;height:${Math.round(d.h * k)}px;border-radius:${round ? "50%" : Math.round(d.r * k + 5) + "px"}`;
+}
+
+function renderDevices() {
+  $("devices").innerHTML = cat.devices.map(d => `
+    <button class="card" data-dev="${d.id}" aria-pressed="false">
+      <div class="silhouette" style="${shape(d, 90)}"></div>
+      <div class="name">${d.name}</div>
+      <div class="sub">${d.w === d.h ? d.w + " round" : d.w + " × " + d.h}${d.id === "band10pro" ? " · tested" : ""}</div>
+    </button>`).join("");
+  $("devices").querySelectorAll(".card").forEach(b => b.onclick = () => pickDevice(b.dataset.dev, true));
+}
+
+function faceCard(id, name, kind, about, previewId) {
+  const f = cat.files[dev.id][id], round = dev.w === dev.h;
+  return `<button class="card face-card" data-face="${id}" aria-pressed="${picked.has(id)}">
+      <span class="tick" aria-hidden="true">✓</span>
+      <div class="shot"><img src="previews/${dev.id}/${previewId}.webp" alt="${name} on ${dev.name}" loading="lazy"
+        style="border-radius:${round ? "50%" : Math.min(dev.r, dev.w / 2) * 0.45 + 5 + "px"}"></div>
+      <div><b>${name}</b><span class="kind ${kind}">${kind}</span></div>
+      <div class="about">${about}</div>
+      <div class="size">${f.file} · ${kb(f.size)}</div>
+    </button>`;
+}
+
+function pickDevice(id, scroll) {
+  dev = cat.devices.find(d => d.id === id); if (!dev) return;
+  store.set("watch", id);
+  history.replaceState(null, "", "?watch=" + id);
+  document.querySelectorAll("[data-dev]").forEach(b => b.setAttribute("aria-pressed", b.dataset.dev === id));
+  picked = new Set([...picked].filter(f => cat.files[id][f]));
+  $("faces").innerHTML = cat.faces.map(f => faceCard(f.id, f.name, f.kind, f.about, f.id)).join("");
+  const apps = cat.apps.filter(a => cat.files[id][a.id]);
+  $("appsBox").innerHTML = apps.length ? `<div class="subhead">Or as real apps <span class="kind App">App</span></div>
+    <p class="sub" style="color:var(--muted);margin:-4px 0 12px">Same games, but they live in the band's app list so you keep your normal watchface. Firmware 3.201.026 (tested), 3.201.016 and 3.101.043.</p>
+    <div class="grid faces">${apps.map(a => faceCard(a.id, a.name, "App", "Installs into the app list", a.preview)).join("")}</div>` : "";
+  document.querySelectorAll("[data-face]").forEach(b => b.onclick = () => toggle(b));
+  $("devNote").innerHTML = id === "band10pro"
+    ? "<b>Tested on the Mi Band 10 Pro</b> (Global 3.201.026)."
+    : id === "band9pro" || id === "band8pro"
+      ? `<b>${dev.name}:</b> same screen as the Band 10 Pro, so the faces are unchanged. Not tested on a real ${dev.name} yet. <a href="${REPO_URL}/issues/new/choose">Tell us how it goes</a>.`
+      : `<b>${dev.name}:</b> faces are scaled to fit this screen. Not tested on a real ${dev.name} yet. <a href="${REPO_URL}/issues/new/choose">Tell us how it goes</a>.`;
+  $("zipBtn").href = dl(dev.zip);
+  $("zipBtn").textContent = `All as .zip (${kb(dev.zipSize)})`;
+  $("step2").classList.remove("locked");
+  $("step3").classList.remove("show");
+  updateBar();
+  if (scroll) $("step2").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function toggle(b) {
+  const id = b.dataset.face;
+  picked.has(id) ? picked.delete(id) : picked.add(id);
+  b.setAttribute("aria-pressed", picked.has(id));
+  updateBar();
+}
+
+function updateBar() {
+  const files = [...picked].map(f => cat.files[dev.id][f]);
+  const total = files.reduce((s, f) => s + f.size, 0);
+  $("sum").innerHTML = files.length
+    ? `<b>${files.length}</b> for <b>${dev.name}</b> · ${kb(total)}`
+    : `Pick faces for <b>${dev.name}</b>, or grab everything as a zip`;
+  $("dlBtn").disabled = !files.length;
+  $("dlBtn").textContent = files.length > 1 ? `Download ${files.length} files` : "Download";
+  $("pickHint").textContent = files.length ? `${files.length} selected` : "Tap to select";
+  $("bar").classList.add("show");
+}
+
+// one link per file; spaced out so browsers don't drop any
+$("dlBtn").onclick = () => {
+  const files = [...picked].map(f => cat.files[dev.id][f].file);
+  files.forEach((f, i) => setTimeout(() => {
+    const a = document.createElement("a"); a.href = dl(f); a.rel = "noopener";
+    document.body.appendChild(a); a.click(); a.remove();
+  }, i * 700));
+  showDone();
+};
+$("zipBtn").onclick = () => setTimeout(showDone, 100);
+function showDone() {
+  $("appStep").hidden = ![...picked].some(f => f.startsWith("app_"));
+  $("step3").classList.add("show");
+  setTimeout(() => $("step3").scrollIntoView({ behavior: "smooth", block: "start" }), 150);
+}
+
+fetch("catalog.json").then(r => r.json()).then(c => {
+  cat = c; renderDevices();
+  const want = new URLSearchParams(location.search).get("watch") || store.get("watch");
+  if (want) pickDevice(want, false);
+}).catch(() => { $("devices").innerHTML = `<p class="err">Couldn't load the list. <a href="${REPO_URL}/releases/latest">Open the releases page</a> instead.</p>`; });
+</script>
+</body>
+</html>

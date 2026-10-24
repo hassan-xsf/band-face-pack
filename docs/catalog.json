@@ -1,0 +1,346 @@
+{
+ "devices": [
+  {
+   "id": "band10pro",
+   "name": "Mi Band 10 Pro",
+   "w": 336,
+   "h": 480,
+   "r": 28,
+   "zip": "band10pro.zip",
+   "zipSize": 1035166
+  },
+  {
+   "id": "band9pro",
+   "name": "Mi Band 9 Pro",
+   "w": 336,
+   "h": 480,
+   "r": 28,
+   "zip": "band9pro.zip",
+   "zipSize": 765941
+  },
+  {
+   "id": "band8pro",
+   "name": "Mi Band 8 Pro",
+   "w": 336,
+   "h": 480,
+   "r": 28,
+   "zip": "band8pro.zip",
+   "zipSize": 765941
+  },
+  {
+   "id": "band10",
+   "name": "Mi Band 10",
+   "w": 212,
+   "h": 520,
+   "r": 106,
+   "zip": "band10.zip",
+   "zipSize": 573305
+  },
+  {
+   "id": "band9",
+   "name": "Mi Band 9",
+   "w": 192,
+   "h": 490,
+   "r": 90,
+   "zip": "band9.zip",
+   "zipSize": 509430
+  },
+  {
+   "id": "redmiwatch4",
+   "name": "Redmi Watch 4",
+   "w": 390,
+   "h": 450,
+   "r": 80,
+   "zip": "redmiwatch4.zip",
+   "zipSize": 1021543
+  },
+  {
+   "id": "redmiwatch6",
+   "name": "Redmi Watch 6",
+   "w": 432,
+   "h": 514,
+   "r": 80,
+   "zip": "redmiwatch6.zip",
+   "zipSize": 1241606
+  },
+  {
+   "id": "watchs3",
+   "name": "Xiaomi Watch S3",
+   "w": 466,
+   "h": 466,
+   "r": 233,
+   "zip": "watchs3.zip",
+   "zipSize": 837123
+  },
+  {
+   "id": "watchs4",
+   "name": "Xiaomi Watch S4",
+   "w": 466,
+   "h": 466,
+   "r": 233,
+   "zip": "watchs4.zip",
+   "zipSize": 837123
+  }
+ ],
+ "faces": [
+  {
+   "id": "stride",
+   "name": "Stride",
+   "kind": "Watchface",
+   "about": "Running and walking: steps, km, pace, heart rate, walk sessions"
+  },
+  {
+   "id": "flappy",
+   "name": "Flappy Bird",
+   "kind": "Game",
+   "about": "Tap to flap. Original sprites, best score saved"
+  },
+  {
+   "id": "tictactoe",
+   "name": "Tic Tac Toe",
+   "kind": "Game",
+   "about": "Beat the CPU (Easy / Hard) or play a friend"
+  },
+  {
+   "id": "calculator",
+   "name": "Calculator",
+   "kind": "Tool",
+   "about": "Phone-style calculator with percent and repeat equals"
+  },
+  {
+   "id": "expenses",
+   "name": "Expenses",
+   "kind": "Tool",
+   "about": "Log spending; today, week, month and history"
+  }
+ ],
+ "apps": [
+  {
+   "id": "app_flappy",
+   "name": "Flappy Bird app",
+   "preview": "flappy"
+  },
+  {
+   "id": "app_tictactoe",
+   "name": "Tic Tac Toe app",
+   "preview": "tictactoe"
+  },
+  {
+   "id": "app_calculator",
+   "name": "Calculator app",
+   "preview": "calculator"
+  }
+ ],
+ "files": {
+  "band10pro": {
+   "stride": {
+    "file": "lua_stride.face",
+    "size": 830364
+   },
+   "flappy": {
+    "file": "lua_flappy.face",
+    "size": 797304
+   },
+   "tictactoe": {
+    "file": "lua_tictactoe.face",
+    "size": 717748
+   },
+   "calculator": {
+    "file": "lua_calculator.face",
+    "size": 654092
+   },
+   "expenses": {
+    "file": "lua_expenses.face",
+    "size": 771392
+   },
+   "app_flappy": {
+    "file": "native_flappy.face",
+    "size": 856608
+   },
+   "app_tictactoe": {
+    "file": "native_ttt.face",
+    "size": 884376
+   },
+   "app_calculator": {
+    "file": "native_calc.face",
+    "size": 881568
+   }
+  },
+  "band9pro": {
+   "stride": {
+    "file": "lua_stride_band9pro.face",
+    "size": 486244
+   },
+   "flappy": {
+    "file": "lua_flappy_band9pro.face",
+    "size": 363852
+   },
+   "tictactoe": {
+    "file": "lua_tictactoe_band9pro.face",
+    "size": 339816
+   },
+   "calculator": {
+    "file": "lua_calculator_band9pro.face",
+    "size": 65620
+   },
+   "expenses": {
+    "file": "lua_expenses_band9pro.face",
+    "size": 186056
+   }
+  },
+  "band8pro": {
+   "stride": {
+    "file": "lua_stride_band8pro.face",
+    "size": 486244
+   },
+   "flappy": {
+    "file": "lua_flappy_band8pro.face",
+    "size": 363852
+   },
+   "tictactoe": {
+    "file": "lua_tictactoe_band8pro.face",
+    "size": 339816
+   },
+   "calculator": {
+    "file": "lua_calculator_band8pro.face",
+    "size": 65620
+   },
+   "expenses": {
+    "file": "lua_expenses_band8pro.face",
+    "size": 186056
+   }
+  },
+  "band10": {
+   "stride": {
+    "file": "lua_stride_band10.face",
+    "size": 235472
+   },
+   "flappy": {
+    "file": "lua_flappy_band10.face",
+    "size": 330412
+   },
+   "tictactoe": {
+    "file": "lua_tictactoe_band10.face",
+    "size": 143880
+   },
+   "calculator": {
+    "file": "lua_calculator_band10.face",
+    "size": 57980
+   },
+   "expenses": {
+    "file": "lua_expenses_band10.face",
+    "size": 165192
+   }
+  },
+  "band9": {
+   "stride": {
+    "file": "lua_stride_band9.face",
+    "size": 209484
+   },
+   "flappy": {
+    "file": "lua_flappy_band9.face",
+    "size": 299892
+   },
+   "tictactoe": {
+    "file": "lua_tictactoe_band9.face",
+    "size": 126900
+   },
+   "calculator": {
+    "file": "lua_calculator_band9.face",
+    "size": 53172
+   },
+   "expenses": {
+    "file": "lua_expenses_band9.face",
+    "size": 154684
+   }
+  },
+  "redmiwatch4": {
+   "stride": {
+    "file": "lua_stride_redmiwatch4.face",
+    "size": 423836
+   },
+   "flappy": {
+    "file": "lua_flappy_redmiwatch4.face",
+    "size": 519904
+   },
+   "tictactoe": {
+    "file": "lua_tictactoe_redmiwatch4.face",
+    "size": 322612
+   },
+   "calculator": {
+    "file": "lua_calculator_redmiwatch4.face",
+    "size": 126700
+   },
+   "expenses": {
+    "file": "lua_expenses_redmiwatch4.face",
+    "size": 269844
+   }
+  },
+  "redmiwatch6": {
+   "stride": {
+    "file": "lua_stride_redmiwatch6.face",
+    "size": 511272
+   },
+   "flappy": {
+    "file": "lua_flappy_redmiwatch6.face",
+    "size": 612696
+   },
+   "tictactoe": {
+    "file": "lua_tictactoe_redmiwatch6.face",
+    "size": 404396
+   },
+   "calculator": {
+    "file": "lua_calculator_redmiwatch6.face",
+    "size": 154280
+   },
+   "expenses": {
+    "file": "lua_expenses_redmiwatch6.face",
+    "size": 318008
+   }
+  },
+  "watchs3": {
+   "stride": {
+    "file": "lua_stride_watchs3.face",
+    "size": 327836
+   },
+   "flappy": {
+    "file": "lua_flappy_watchs3.face",
+    "size": 442620
+   },
+   "tictactoe": {
+    "file": "lua_tictactoe_watchs3.face",
+    "size": 214628
+   },
+   "calculator": {
+    "file": "lua_calculator_watchs3.face",
+    "size": 84020
+   },
+   "expenses": {
+    "file": "lua_expenses_watchs3.face",
+    "size": 215116
+   }
+  },
+  "watchs4": {
+   "stride": {
+    "file": "lua_stride_watchs4.face",
+    "size": 327836
+   },
+   "flappy": {
+    "file": "lua_flappy_watchs4.face",
+    "size": 442620
+   },
+   "tictactoe": {
+    "file": "lua_tictactoe_watchs4.face",
+    "size": 214628
+   },
+   "calculator": {
+    "file": "lua_calculator_watchs4.face",
+    "size": 84020
+   },
+   "expenses": {
+    "file": "lua_expenses_watchs4.face",
+    "size": 215116
+   }
+  }
+ }
+}
