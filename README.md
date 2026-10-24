@@ -8,7 +8,7 @@
 Free and open source. Install them with Gadgetbridge, with no modded apps and no root.
 
 [![Device](https://img.shields.io/badge/device-Mi%20Band%2010%20Pro-c6f432?style=flat-square)](#compatibility)
-[![Firmware](https://img.shields.io/badge/firmware-3.201.026-38d6f5?style=flat-square)](#compatibility)
+[![Firmware](https://img.shields.io/badge/firmware-3.201.026%20%C2%B7%203.201.016%20%C2%B7%20CN%203.101.043-38d6f5?style=flat-square)](#compatibility)
 [![Install](https://img.shields.io/badge/install-Gadgetbridge-ff9f0a?style=flat-square)](INSTALL.md)
 [![License](https://img.shields.io/badge/license-MIT-af82ff?style=flat-square)](LICENSE)
 
@@ -89,7 +89,9 @@ Every face keeps the band usable: long-press and swipe still work, so you can al
 | | |
 |---|---|
 | Device | Xiaomi Smart Band 10 Pro (336 × 480) |
-| Firmware | Global **3.201.026** (the Lua faces should also run on nearby versions; the native apps need exactly 3.201.026) |
+| Firmware | Global **3.201.026**: everything tested on the band |
+| | Global **3.201.016** and China **3.101.043**: native apps built from m0tral's firmware maps, **untested** (please report!) |
+| | Lua faces use the standard watchface engine and should work on any Band 10 Pro firmware |
 | Phone | Android with [Gadgetbridge](https://gadgetbridge.org/). The official Mi Fitness app can't install custom faces. |
 
 They won't run on other bands or watches (Band 9/10, Amazfit, Wear OS): each device has its own face format.
