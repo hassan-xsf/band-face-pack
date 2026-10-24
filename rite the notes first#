@@ -1,0 +1,1 @@
+gh release create v1.0.0 dist/* --title "v1.0.0" --notes-file dist/notes.md   

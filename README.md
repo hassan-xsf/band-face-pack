@@ -13,7 +13,9 @@ Free and open source. Install them with Gadgetbridge, with no modded apps and no
 [![Install](https://img.shields.io/badge/install-Gadgetbridge-ff9f0a?style=flat-square)](INSTALL.md)
 [![License](https://img.shields.io/badge/license-MIT-af82ff?style=flat-square)](LICENSE)
 
-[**Download**](../../releases/latest) · [Install guide](INSTALL.md) · [Preview in your browser](#preview-before-installing) · [Credits](#credits)
+### [⬇ Get faces for your watch](https://hassan-xsf.github.io/miband10pro-faces/)
+
+[Install guide](INSTALL.md) · [Preview in your browser](#preview-before-installing) · [Credits](#credits)
 
 </div>
 
@@ -67,24 +69,25 @@ stock apps, so you keep your normal watchface.
 
 > First time? Follow the **[full install guide](INSTALL.md)**. You need the band's auth key once.
 
-1. Download the `.face` for **your device** from **[Releases](../../releases/latest)**, or from [`faces/`](faces).
+1. Open the **[download page](https://hassan-xsf.github.io/miband10pro-faces/)**: pick your watch, tick what you want, download. Or grab files from
+   **[Releases](../../releases/latest)**.
 2. Send it to your phone and open it with **Gadgetbridge** → **Install**.
 3. On the band, long-press the watchface, swipe to the new one and tap it.
 
-Pick the folder for your device. Each has the same five faces: `lua_stride`, `lua_flappy`, `lua_tictactoe`,
-`lua_calculator` and `lua_expenses` (with a `_<device>` suffix outside `band10pro/`).
+Every device gets the same five faces: `lua_stride`, `lua_flappy`, `lua_tictactoe`, `lua_calculator` and
+`lua_expenses`, with a `_<device>` suffix except on the Band 10 Pro. Each release also has one zip per device.
 
-| Folder | Device | Screen |
+| Zip | Device | Screen |
 |---|---|---|
-| [`faces/band10pro/`](faces/band10pro) | Mi Band 10 Pro, plus native apps in [`apps/`](faces/band10pro/apps) | 336 × 480 |
-| [`faces/band9pro/`](faces/band9pro) | Mi Band 9 Pro | 336 × 480 |
-| [`faces/band8pro/`](faces/band8pro) | Mi Band 8 Pro | 336 × 480 |
-| [`faces/band10/`](faces/band10) | Mi Band 10 | 212 × 520 |
-| [`faces/band9/`](faces/band9) | Mi Band 9 | 192 × 490 |
-| [`faces/redmiwatch4/`](faces/redmiwatch4) | Redmi Watch 4 | 390 × 450 |
-| [`faces/redmiwatch6/`](faces/redmiwatch6) | Redmi Watch 6 | 432 × 514 |
-| [`faces/watchs3/`](faces/watchs3) | Xiaomi Watch S3 | 466 round |
-| [`faces/watchs4/`](faces/watchs4) | Xiaomi Watch S4 | 466 round |
+| [`band10pro.zip`](../../releases/latest/download/band10pro.zip) | Mi Band 10 Pro, plus the native apps | 336 × 480 |
+| [`band9pro.zip`](../../releases/latest/download/band9pro.zip) | Mi Band 9 Pro | 336 × 480 |
+| [`band8pro.zip`](../../releases/latest/download/band8pro.zip) | Mi Band 8 Pro | 336 × 480 |
+| [`band10.zip`](../../releases/latest/download/band10.zip) | Mi Band 10 | 212 × 520 |
+| [`band9.zip`](../../releases/latest/download/band9.zip) | Mi Band 9 | 192 × 490 |
+| [`redmiwatch4.zip`](../../releases/latest/download/redmiwatch4.zip) | Redmi Watch 4 | 390 × 450 |
+| [`redmiwatch6.zip`](../../releases/latest/download/redmiwatch6.zip) | Redmi Watch 6 | 432 × 514 |
+| [`watchs3.zip`](../../releases/latest/download/watchs3.zip) | Xiaomi Watch S3 | 466 round |
+| [`watchs4.zip`](../../releases/latest/download/watchs4.zip) | Xiaomi Watch S4 | 466 round |
 
 **Native apps:** install the face, open it on the band and tap **Install**. The app copies itself into the app list.
 Then switch it **On** once in **Settings → Manage apps**.
@@ -171,6 +174,16 @@ src/wf_lua_<name>/
 ├── *_test.lua           PC tests (lua <name>_test.lua)
 └── module.fprj          EasyFace project
 ```
+
+### Making a release
+
+```powershell
+python release.py                                  # dist/ (every .face + a zip per device), docs/catalog.json, docs/previews/
+gh release create v1.0.0 dist/* --title "v1.0.0" --notes-file dist/notes.md   
+```
+
+Built faces go in `faces/<device>/` (not in git). The download page (`docs/`, served by GitHub Pages) links to
+`releases/latest`, so a new release updates it without touching the page.
 
 Issues and pull requests are welcome.
 
