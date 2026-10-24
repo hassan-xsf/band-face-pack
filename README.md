@@ -4,10 +4,10 @@
 
 # Mi Band 10 Pro Faces
 
-**A fitness tracker face, Flappy Bird, Tic Tac Toe, a calculator and an expense tracker for the Xiaomi Smart Band 10 Pro.**
+**A fitness tracker face, Flappy Bird, Tic Tac Toe, a calculator and an expense tracker for the Xiaomi Smart Band 10 Pro, 9 Pro and 8 Pro.**
 Free and open source. Install them with Gadgetbridge, with no modded apps and no root.
 
-[![Device](https://img.shields.io/badge/device-Mi%20Band%2010%20Pro-c6f432?style=flat-square)](#compatibility)
+[![Devices](https://img.shields.io/badge/devices-Band%2010%20Pro%20%C2%B7%209%20Pro%20%C2%B7%208%20Pro-c6f432?style=flat-square)](#compatibility)
 [![Firmware](https://img.shields.io/badge/firmware-3.201.026%20%C2%B7%203.201.016%20%C2%B7%20CN%203.101.043-38d6f5?style=flat-square)](#compatibility)
 [![Install](https://img.shields.io/badge/install-Gadgetbridge-ff9f0a?style=flat-square)](INSTALL.md)
 [![License](https://img.shields.io/badge/license-MIT-af82ff?style=flat-square)](LICENSE)
@@ -66,18 +66,16 @@ stock apps, so you keep your normal watchface.
 
 > First time? Follow the **[full install guide](INSTALL.md)**. You need the band's auth key once.
 
-1. Download the `.face` you want from **[Releases](../../releases/latest)**, or from [`faces/`](faces).
+1. Download the `.face` for **your device** from **[Releases](../../releases/latest)**, or from [`faces/`](faces).
 2. Send it to your phone and open it with **Gadgetbridge** → **Install**.
 3. On the band, long-press the watchface, swipe to the new one and tap it.
 
-| File | What |
-|---|---|
-| `lua_stride.face` | Stride (running and walking) |
-| `lua_flappy.face` | Flappy Bird |
-| `lua_tictactoe.face` | Tic Tac Toe |
-| `lua_calculator.face` | Calculator |
-| `lua_expenses.face` | Expenses |
-| `apps/native_flappy.face`, `apps/native_ttt.face`, `apps/native_calc.face` | Native app installers (see below) |
+| Folder | Device | Files |
+|---|---|---|
+| [`faces/band10pro/`](faces/band10pro) | Mi Band 10 Pro | `lua_stride` · `lua_flappy` · `lua_tictactoe` · `lua_calculator` · `lua_expenses` |
+| [`faces/band10pro/apps/`](faces/band10pro/apps) | Mi Band 10 Pro | native app installers: `native_flappy` · `native_ttt` · `native_calc` |
+| [`faces/band9pro/`](faces/band9pro) | Mi Band 9 Pro | the same five faces, `*_band9pro.face` |
+| [`faces/band8pro/`](faces/band8pro) | Mi Band 8 Pro | the same five faces, `*_band8pro.face` |
 
 **Native apps:** install the face, open it on the band and tap **Install**. The app copies itself into the app list.
 Then switch it **On** once in **Settings → Manage apps**.
@@ -88,13 +86,19 @@ Every face keeps the band usable: long-press and swipe still work, so you can al
 
 | | |
 |---|---|
-| Device | Xiaomi Smart Band 10 Pro (336 × 480) |
-| Firmware | Global **3.201.026**: everything tested on the band |
-| | Global **3.201.016** and China **3.101.043**: native apps built from m0tral's firmware maps, **untested** (please report!) |
-| | Lua faces use the standard watchface engine and should work on any Band 10 Pro firmware |
+| Device | Status |
+|---|---|
+| **Mi Band 10 Pro**, Global 3.201.026 | ✅ Everything tested on the band |
+| Mi Band 10 Pro, Global 3.201.016 / China 3.101.043 | 🟡 Lua faces should work. Native apps are built from m0tral's firmware maps but **untested** |
+| **Mi Band 9 Pro** | 🟡 Same 336 × 480 screen and Lua engine, built for its device type. **Untested**: please report! |
+| **Mi Band 8 Pro** | 🟡 Same as above |
+| Other Xiaomi watches (Band 9/10, Redmi Watch 4/6, Watch S3/S4/S5) | 🔜 They run Lua faces too, but with different screens. Planned |
+| Phone | Android with [Gadgetbridge](https://gadgetbridge.org/). The official Mi Fitness app can't install custom faces. |
 | Phone | Android with [Gadgetbridge](https://gadgetbridge.org/). The official Mi Fitness app can't install custom faces. |
 
-They won't run on other bands or watches (Band 9/10, Amazfit, Wear OS): each device has its own face format.
+Native apps are Band 10 Pro only. Non-Xiaomi watches (Amazfit, Wear OS, Huawei) use completely different systems.
+
+Tried it on a 🟡 device? **[Tell us how it went](../../issues/new/choose)**, even "works fine" helps.
 
 ## FAQ
 

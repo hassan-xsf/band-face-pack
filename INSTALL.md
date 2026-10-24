@@ -1,4 +1,4 @@
-# Installing watchfaces on the Mi Band 10 Pro
+# Installing watchfaces on a Mi Band 10 Pro, 9 Pro or 8 Pro
 
 This uses **Gadgetbridge**: free and open source, with no modded Mi Fitness
 and no cracked apps.
@@ -6,7 +6,7 @@ and no cracked apps.
 You need:
 - an Android phone with Gadgetbridge from [F-Droid](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/)
 - the band's **auth key** (one-time, below)
-- a `.face` file from `faces/`, for example `faces/lua_stride.face`
+- a `.face` file for your device from `faces/`, for example `faces/band10pro/lua_stride.face`
 
 ---
 
@@ -20,7 +20,7 @@ You need:
    download `token_extractor.exe` from its releases and run it. Log in with
    the same Xiaomi account. When it asks for a server, pick yours (`in`, `de`,
    `sg`, `cn`, … or leave it blank to try all).
-   Find the band (`Xiaomi Smart Band 10 Pro`, model `miwear.watch.p67gl`).
+   Find your band (for example `Xiaomi Smart Band 10 Pro`, model `miwear.watch.p67gl`).
    **`TOKEN` is the auth key**: 32 hex characters.
    > Keep the key private: anyone with it can talk to your band. It changes
    > every time you re-pair with Mi Fitness.
@@ -84,7 +84,7 @@ green.
 | Band not found in the scan | Turn the phone's Bluetooth off and on. On the band, unpair it from the phone's Bluetooth settings if it's listed there. Keep the band close. |
 | "Open with" doesn't list Gadgetbridge | Use Gadgetbridge → watchface manager → **+** instead. |
 | Install starts, then fails | Reconnect (Gadgetbridge → the band → Connect) and try again. Very large faces (several MB) can time out; shrink the PNGs. |
-| The face shows **"unsupported firmware"** | The native apps (`faces/apps/`) support firmware 3.201.026, 3.201.016 and 3.101.043 (CN). On anything else use the Lua faces, and open an issue with your firmware version. |
+| The face shows **"unsupported firmware"** | The native apps (`faces/band10pro/apps/`) support firmware 3.201.026, 3.201.016 and 3.101.043 (CN). On anything else use the Lua faces, and open an issue with your firmware version. |
 | Blank or black face | It's a Lua error at startup. Open the same `.face` in the viewer and read the Console tab. |
 | Can't swipe or long-press away | See [Getting off a broken watchface](#getting-off-a-broken-watchface). |
 | Two copies of the same face | They were built with different IDs (renamed folder). Delete the old one. |
