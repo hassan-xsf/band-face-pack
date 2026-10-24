@@ -1,10 +1,11 @@
 # Build a Lua watchface project into build\<name>.face
 # Usage: .\build_face.ps1 mb10pro\wf_lua_flappy [id] [-Device band9pro]
-# -Device builds for another 336x480 Lua device -> build\<name>_<device>.face
+# -Device ports it to another Xiaomi Lua device (port\port.py) -> build\<name>_<device>.face
 param(
     [Parameter(Mandatory)][string]$Project,
     [string]$Id = "",
-    [ValidateSet("", "band8pro", "band9pro", "band10pro")][string]$Device = "",
+    [ValidateSet("", "band10pro", "band9pro", "band8pro", "band10", "band9", "redmiwatch4", "redmiwatch6", "watchs3", "watchs4")]
+    [string]$Device = "",
     [string]$Compiler = "C:\Users\Hassan\Downloads\Easyface\app\Compiler.exe"
 )
 $ErrorActionPreference = "Stop"
@@ -22,14 +23,13 @@ New-Item -ItemType Directory -Force $out, (Join-Path $proj "output") | Out-Null
 $faceName = "$name.face"
 $src = $fprj.FullName
 if ($Device) {
-    # same screen, other device: swap the DeviceType (EasyFace DeviceInfo.db) in a temp copy
-    $type = @{ band8pro = 11; band9pro = 367; band10pro = 567 }[$Device]
     $faceName = "$($name)_$Device.face"
-    $src = Join-Path $proj "module.$Device.fprj"
-    (Get-Content $fprj.FullName -Raw) -replace 'DeviceType="\d+"', "DeviceType=`"$type`"" | Set-Content $src -NoNewline
+    $ported = python (Join-Path $PSScriptRoot "port\port.py") $proj $Device (Join-Path $out "port")
+    if ($LASTEXITCODE) { throw "port failed: $Device" }
+    $src = (Get-ChildItem $ported -Filter *.fprj | Select-Object -First 1).FullName
 }
-try { & $Compiler -b $src $out $faceName $Id }
-finally { if ($Device) { Remove-Item $src } }
+& $Compiler -b $src $out $faceName $Id
+if ($LASTEXITCODE) { throw "compiler failed ($LASTEXITCODE)" }
 # the compiler ignores $Id and stamps 167210065 into every face, so the band sees
 # them all as one face. Write ours into the ID field (0x28, 64 bytes, NUL padded).
 $facePath = Join-Path $out $faceName
