@@ -46,6 +46,16 @@ def fit(w, h, r):
     return math.floor(s * 1000) / 1000  # round down so it still fits
 
 
+def on_screen(im, device):
+    """A 336x480 screenshot as it sits on the device's screen (scaled, centred, black around it)."""
+    _, w, h, r = DEVICES[device]
+    s = fit(w, h, r)
+    im = im.convert("RGBA").resize((round(FW * s), round(FH * s)), Image.LANCZOS)
+    canvas = Image.new("RGBA", (w, h), (0, 0, 0, 255))
+    canvas.paste(im, (round((w - FW * s) / 2), round((h - FH * s) / 2)), im)
+    return canvas
+
+
 def port(proj, device, out_root):
     typ, w, h, r = DEVICES[device]
     out = Path(out_root) / device / proj.name  # same folder name -> same face id
@@ -64,11 +74,7 @@ def port(proj, device, out_root):
         im.resize((max(1, round(im.width * s)), max(1, round(im.height * s))), Image.LANCZOS).save(png)
     prev = out / "images" / "preview.png"
     if prev.exists():
-        im = Image.open(prev).convert("RGBA")
-        im = im.resize((round(FW * s), round(FH * s)), Image.LANCZOS)
-        canvas = Image.new("RGBA", (w, h), (0, 0, 0, 255))
-        canvas.paste(im, (ox, oy), im)
-        canvas.resize(PREVIEW.get(device, (w, h)), Image.LANCZOS).save(prev)
+        on_screen(Image.open(prev), device).resize(PREVIEW.get(device, (w, h)), Image.LANCZOS).save(prev)
 
     prelude = (Path(__file__).parent / "prelude.lua").read_text(encoding="utf-8")
     for k, v in {"S": s, "OX": ox, "OY": oy, "SW": w, "SH": h}.items():
