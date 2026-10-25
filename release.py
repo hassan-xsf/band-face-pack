@@ -29,9 +29,9 @@ FACES = [
 ]
 # native app installers (Band 10 Pro only): id, name, file, screenshot
 APPS = [
-    ("flappy", "Flappy Bird app", "native_flappy.face", "flappy"),
-    ("tictactoe", "Tic Tac Toe app", "native_ttt.face", "tictactoe"),
-    ("calculator", "Calculator app", "native_calc.face", "calculator"),
+    ("flappy", "Flappy Bird", "native_flappy.face", "flappy"),
+    ("tictactoe", "Tic Tac Toe", "native_ttt.face", "tictactoe"),
+    ("calculator", "Calculator", "native_calc.face", "calculator"),
 ]
 
 

@@ -117,17 +117,17 @@
  "apps": [
   {
    "id": "app_flappy",
-   "name": "Flappy Bird app",
+   "name": "Flappy Bird",
    "preview": "flappy"
   },
   {
    "id": "app_tictactoe",
-   "name": "Tic Tac Toe app",
+   "name": "Tic Tac Toe",
    "preview": "tictactoe"
   },
   {
    "id": "app_calculator",
-   "name": "Calculator app",
+   "name": "Calculator",
    "preview": "calculator"
   }
  ],

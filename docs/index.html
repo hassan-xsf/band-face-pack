@@ -3,147 +3,265 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Xiaomi Watch Faces</title>
-<meta name="description" content="Free watchfaces, games and tools for Xiaomi bands and watches: pick your watch, pick what you want, download.">
-<meta property="og:title" content="Xiaomi Watch Faces">
-<meta property="og:description" content="Stride, Flappy Bird, Tic Tac Toe, Calculator and Expenses for 9 Xiaomi bands and watches. Free, open source.">
-<meta property="og:image" content="banner.png">
+<title>Band Face Pack · Free faces, games and apps for Xiaomi bands and watches</title>
+<meta name="description" content="Free watchfaces, games and tools for Xiaomi bands and watches. Pick your watch, pick what you want, download.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Band Face Pack">
+<meta property="og:description" content="Stride, Flappy Bird, Tic Tac Toe, Calculator and Expenses for 9 Xiaomi bands and watches. Free and open source.">
+<meta property="og:url" content="https://hassan-xsf.github.io/band-face-pack/">
+<meta property="og:image" content="https://hassan-xsf.github.io/band-face-pack/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#08090b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23c6f432%22/%3E%3Crect x=%2211%22 y=%227%22 width=%2210%22 height=%2218%22 rx=%223%22 fill=%22none%22 stroke=%22%2310140a%22 stroke-width=%222.5%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #090a0c; --panel: #121418; --panel2: #181b20; --line: #262a31; --text: #f2f3f5; --muted: #8e8e93;
-  --lime: #c6f432; --lime-ink: #10140a; --cyan: #38d6f5; --orange: #ff9f0a;
+  --bg: #07080a; --bg2: #0c0e11; --panel: #111317; --panel2: #171a1f; --line: #1e2228; --line2: #2a2f37;
+  --text: #f1f3f5; --muted: #8b919a; --dim: #5c626b;
+  --lime: #c6f432; --lime-ink: #10140a; --cyan: #38d6f5; --orange: #ff9f0a; --pink: #ff375f; --purple: #af82ff;
+  --glow: rgba(198, 244, 50, .14);
 }
 * { box-sizing: border-box; }
-html { color-scheme: dark; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 Inter, system-ui, sans-serif; }
-a { color: var(--cyan); }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px 140px; }
-h1, h2, .display { font-family: "Chakra Petch", sans-serif; letter-spacing: .01em; }
+html { color-scheme: dark; scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 Manrope, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--lime); text-decoration: none; }
+a:hover { text-decoration: underline; }
+::selection { background: var(--lime); color: var(--lime-ink); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.display { font-family: "Chakra Petch", sans-serif; letter-spacing: .005em; }
 
-header.hero { text-align: center; padding: 48px 0 24px; }
-header.hero h1 { font-size: clamp(32px, 6vw, 56px); margin: 0; line-height: 1.05; }
-header.hero h1 span { color: var(--lime); }
-header.hero p { color: var(--muted); max-width: 620px; margin: 14px auto 0; }
-.badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
-.badge { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--muted); }
+/* ---------------------------------------------------------------- nav */
+nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 78%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; align-items: center; gap: 14px; height: 60px; }
+.logo { display: flex; align-items: center; gap: 10px; font: 700 18px "Chakra Petch"; color: var(--text); }
+.logo .mark { width: 30px; height: 30px; border-radius: 9px; background: var(--lime); display: grid; place-items: center; box-shadow: 0 0 24px var(--glow); }
+.logo .mark svg { width: 20px; height: 20px; color: var(--lime-ink); }
+nav .grow { flex: 1; }
+nav a.link { color: var(--muted); font-weight: 600; font-size: 14px; }
+nav a.link:hover { color: var(--text); text-decoration: none; }
 
-.step { margin-top: 40px; }
-.step-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
-.step-num { font-family: "Chakra Petch"; font-weight: 700; color: var(--lime-ink); background: var(--lime);
-  border-radius: 8px; width: 30px; height: 30px; display: grid; place-items: center; flex: none; }
-.step-head h2 { margin: 0; font-size: 24px; }
-.step-head .hint { color: var(--muted); font-size: 14px; }
-.step.locked { opacity: .35; pointer-events: none; }
+/* ---------------------------------------------------------------- hero */
+.hero { position: relative; overflow: hidden; padding: 72px 0 40px; text-align: center; }
+.hero::before { content: ""; position: absolute; inset: -20% -10% auto; height: 620px; z-index: -1;
+  background: radial-gradient(48% 55% at 50% 40%, rgba(198,244,50,.16), transparent 70%),
+              radial-gradient(30% 40% at 18% 30%, rgba(56,214,245,.08), transparent 70%),
+              radial-gradient(30% 40% at 82% 30%, rgba(175,130,255,.08), transparent 70%); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .35;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 44px 44px; mask-image: radial-gradient(60% 60% at 50% 30%, #000, transparent 75%); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line2); background: var(--panel);
+  border-radius: 999px; padding: 6px 14px 6px 8px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.eyebrow b { background: var(--lime); color: var(--lime-ink); border-radius: 999px; padding: 2px 9px; font-size: 12px; }
+.hero h1 { font: 700 clamp(40px, 7.4vw, 82px)/1.0 "Chakra Petch", sans-serif; margin: 22px auto 0; max-width: 900px; letter-spacing: -.01em; }
+.hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--lime), #e8ff8a 50%, var(--lime)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero p.lead { color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 640px; margin: 20px auto 0; }
+.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+.btn { font: 700 15px Manrope, sans-serif; border-radius: 14px; padding: 14px 22px; border: 1.5px solid var(--line2);
+  background: var(--panel); color: var(--text); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: transform .12s, border-color .15s, background .15s; text-decoration: none !important; }
+.btn:hover { border-color: #3b414b; transform: translateY(-1px); }
+.btn.primary { background: var(--lime); border-color: var(--lime); color: var(--lime-ink); box-shadow: 0 0 34px var(--glow), 0 8px 24px rgba(198,244,50,.18); }
+.btn.primary:hover { background: #d4ff4a; }
+.btn:disabled { opacity: .35; cursor: default; transform: none; box-shadow: none; }
+.btn svg { width: 18px; height: 18px; }
+.stats { display: flex; justify-content: center; gap: 34px; margin-top: 44px; flex-wrap: wrap; }
+.stats div { text-align: center; }
+.stats b { display: block; font: 700 32px "Chakra Petch"; }
+.stats span { color: var(--muted); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
+.showcase { display: flex; align-items: center; justify-content: center; gap: clamp(10px, 3vw, 34px); margin: 56px auto 0; min-height: 300px; }
+.showcase .item { display: flex; flex-direction: column; align-items: center; gap: 12px; animation: rise .7s both; }
+.showcase .item:nth-child(2) { animation-delay: .08s } .showcase .item:nth-child(3) { animation-delay: .16s }
+.showcase .item:nth-child(4) { animation-delay: .24s } .showcase .item:nth-child(5) { animation-delay: .32s }
+.showcase .item span { font: 600 12px "Chakra Petch"; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
+.showcase .item.big .watch { box-shadow: inset 0 1px 1px rgba(255,255,255,.18), 0 30px 80px rgba(0,0,0,.6), 0 0 80px rgba(198,244,50,.12); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .showcase .item { animation: none; } }
+@media (max-width: 760px) { .showcase .item.side { display: none; } }
 
-.grid { display: grid; gap: 12px; }
-.devices { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-.faces { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+/* ---------------------------------------------------------------- steps */
+.step { padding: 64px 0 8px; scroll-margin-top: 70px; }
+.step-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 22px; flex-wrap: wrap; }
+.step-head .k { font: 600 13px "Chakra Petch"; color: var(--lime); letter-spacing: .18em; text-transform: uppercase; }
+.step-head h2 { font: 700 clamp(28px, 4vw, 40px)/1.1 "Chakra Petch"; margin: 6px 0 0; }
+.step-head .hint { color: var(--muted); font-size: 14px; font-weight: 600; }
+.step.locked { opacity: .3; pointer-events: none; filter: saturate(.4); }
 
-.card { position: relative; background: var(--panel); border: 1.5px solid var(--line); border-radius: 18px; padding: 16px;
-  color: inherit; font: inherit; text-align: center; cursor: pointer; transition: border-color .15s, transform .15s, background .15s; }
-.card:hover { border-color: #3a404a; transform: translateY(-2px); }
-.card:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
-.card[aria-pressed="true"] { border-color: var(--lime); background: var(--panel2); }
-.card .name { font-weight: 600; margin-top: 10px; }
-.card .sub { color: var(--muted); font-size: 13px; }
+.grid { display: grid; gap: 14px; }
+.devices { grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); }
+.faces { grid-template-columns: repeat(auto-fill, minmax(196px, 1fr)); }
 
-.silhouette { margin: 0 auto; background: #000; border: 5px solid #2b2f36; box-shadow: 0 0 0 1px #3a3f47; }
-.tick { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; border-radius: 50%;
-  border: 1.5px solid var(--line); display: grid; place-items: center; color: transparent; font-size: 14px; font-weight: 700; }
-.card[aria-pressed="true"] .tick { background: var(--lime); border-color: var(--lime); color: var(--lime-ink); }
+.card { position: relative; background: linear-gradient(180deg, var(--panel), var(--bg2)); border: 1.5px solid var(--line); border-radius: 20px;
+  padding: 18px 16px 16px; color: inherit; font: inherit; text-align: center; cursor: pointer;
+  transition: border-color .18s, transform .18s, box-shadow .18s; }
+.card:hover { border-color: var(--line2); transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0,0,0,.4); }
+.card:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+.card[aria-pressed="true"] { border-color: var(--lime); box-shadow: 0 0 0 1px var(--lime), 0 0 40px var(--glow); }
 
-.face-card { text-align: left; display: flex; flex-direction: column; }
-.face-card .shot { height: 220px; display: grid; place-items: center; margin-bottom: 12px; }
-.face-card .shot img { display: block; max-height: 220px; max-width: 100%; border: 5px solid #2b2f36; background: #000; }
-.kind { display: inline-block; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em;
-  padding: 2px 8px; border-radius: 6px; background: #1f232a; color: var(--muted); margin-left: 6px; vertical-align: 2px; }
-.kind.Game { color: var(--cyan); } .kind.Tool { color: var(--orange); } .kind.Watchface { color: var(--lime); } .kind.App { color: #af82ff; }
-.face-card .about { color: var(--muted); font-size: 13.5px; margin-top: 4px; flex: 1; }
-.face-card .size { color: var(--muted); font-size: 12.5px; margin-top: 8px; font-variant-numeric: tabular-nums; }
+/* a watch: metal bezel around the real preview */
+.watch { margin: 0 auto; padding: 5px; background: linear-gradient(150deg, #4a4e56, #17191d 40%, #0b0c0e 62%, #353840);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,.18), 0 12px 26px rgba(0,0,0,.5); position: relative; }
+.wbox { display: flex; align-items: center; justify-content: center; width: 100%; max-height: 100%; }
+.face-card .wbox { height: 100% !important; }
+img.watch { opacity: 0; transition: opacity .35s; }
+img.watch.in { opacity: 1; }
+img.watch { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; box-sizing: border-box; object-fit: contain; }
+.devices .card .name { font: 700 16px "Chakra Petch"; margin-top: 16px; }
+.devices .card .sub { color: var(--muted); font-size: 12.5px; font-weight: 600; margin-top: 2px; }
+.chip { display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line2); color: var(--muted); }
+.chip.ok { color: var(--lime); border-color: rgba(198,244,50,.35); background: rgba(198,244,50,.08); }
 
-.note { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.face-card { text-align: left; display: flex; flex-direction: column; padding: 16px; }
+.face-card .shot { height: 236px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border-radius: 14px;
+  background: radial-gradient(60% 60% at 50% 50%, rgba(255,255,255,.04), transparent 70%); }
+.face-card .title { display: flex; align-items: center; gap: 8px; font: 700 19px "Chakra Petch"; }
+.kind { font: 800 10.5px Manrope; letter-spacing: .1em; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; background: var(--panel2); border: 1px solid var(--line2); }
+.kind.Watchface { color: var(--lime); } .kind.Game { color: var(--cyan); } .kind.Tool { color: var(--orange); } .kind.App { color: var(--purple); }
+.face-card .about { color: var(--muted); font-size: 14px; margin-top: 6px; flex: 1; }
+.face-card .foot { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.face-card .size { color: var(--dim); font-size: 12.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.pick { font-size: 13px; font-weight: 800; color: var(--muted); display: flex; align-items: center; gap: 7px; }
+.pick i svg { width: 14px; height: 14px; }
+.banner-ok svg { width: 20px; height: 20px; flex: none; color: var(--lime); }
+.pick i { width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid var(--line2); display: grid; place-items: center; font-style: normal; font-size: 13px; color: transparent; transition: .15s; }
+.card[aria-pressed="true"] .pick { color: var(--lime); }
+.card[aria-pressed="true"] .pick i { background: var(--lime); border-color: var(--lime); color: var(--lime-ink); }
+
+.subhead { display: flex; align-items: center; gap: 10px; margin: 40px 0 6px; font: 700 22px "Chakra Petch"; }
+.subnote { color: var(--muted); margin: 0 0 16px; font-size: 14.5px; max-width: 720px; }
+.note { margin-top: 20px; padding: 14px 18px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); color: var(--muted); font-size: 14.5px; display: flex; gap: 12px; align-items: flex-start; }
+.note .dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 8px; flex: none; background: var(--orange); box-shadow: 0 0 10px var(--orange); }
+.note.ok .dot { background: var(--lime); box-shadow: 0 0 10px var(--lime); }
 .note b { color: var(--text); }
-.subhead { font-family: "Chakra Petch"; font-size: 18px; margin: 26px 0 10px; }
+.note:empty { display: none; }
 
-.bar { position: fixed; left: 0; right: 0; bottom: 0; background: rgba(9,10,12,.92); backdrop-filter: blur(10px);
-  border-top: 1px solid var(--line); padding: 12px 16px; transform: translateY(110%); transition: transform .2s; z-index: 5; }
-.bar.show { transform: none; }
-.bar .inner { max-width: 1080px; margin: 0 auto; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-.bar .sum { flex: 1; min-width: 180px; color: var(--muted); font-size: 14px; }
-.bar .sum b { color: var(--text); }
-.btn { font: 600 15px Inter, sans-serif; border-radius: 12px; padding: 12px 18px; border: 1.5px solid var(--line);
-  background: var(--panel); color: var(--text); cursor: pointer; text-decoration: none; display: inline-block; }
-.btn.primary { background: var(--lime); border-color: var(--lime); color: var(--lime-ink); }
-.btn:disabled { opacity: .4; cursor: default; }
-
+/* ---------------------------------------------------------------- install */
 .done { display: none; }
 .done.show { display: block; }
-.done ol { margin: 8px 0 0; padding-left: 20px; }
-.done li { margin: 6px 0; }
-footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 60px; }
-.err { color: #ff6b6b; }
-@media (max-width: 520px) {
-  .devices { grid-template-columns: repeat(2, 1fr); }
-  .faces { grid-template-columns: 1fr 1fr; gap: 10px; }
+.how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.how .card { cursor: default; text-align: left; padding: 22px; }
+.how .card:hover { transform: none; box-shadow: none; border-color: var(--line); }
+.how .n { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font: 700 16px "Chakra Petch"; background: var(--lime); color: var(--lime-ink); }
+.how h3 { font: 700 18px "Chakra Petch"; margin: 14px 0 6px; }
+.how p { color: var(--muted); font-size: 14.5px; margin: 0; }
+.banner-ok { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 14px; margin-bottom: 16px;
+  background: rgba(198,244,50,.07); border: 1px solid rgba(198,244,50,.3); color: var(--text); font-weight: 600; }
+
+/* ---------------------------------------------------------------- bar */
+.bar { position: fixed; left: 50%; bottom: 18px; transform: translate(-50%, 140%); transition: transform .25s cubic-bezier(.2,.8,.2,1);
+  width: min(760px, calc(100% - 24px)); z-index: 20; background: color-mix(in srgb, var(--panel) 88%, transparent); backdrop-filter: blur(16px);
+  border: 1px solid var(--line2); border-radius: 20px; padding: 10px 10px 10px 18px; box-shadow: 0 24px 60px rgba(0,0,0,.6); }
+.bar.show { transform: translate(-50%, 0); }
+.bar .inner { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.bar .sum { flex: 1; min-width: 170px; color: var(--muted); font-size: 14px; }
+.bar .sum b { color: var(--text); }
+.bar .btn { padding: 11px 16px; border-radius: 12px; font-size: 14px; }
+
+footer { border-top: 1px solid var(--line); margin-top: 90px; padding: 34px 0 120px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap; }
+footer b { color: var(--text); font-family: "Chakra Petch"; }
+.err { color: var(--pink); }
+
+@media (max-width: 760px) {
+  .how { grid-template-columns: 1fr; }
+  .stats { gap: 22px; }
+  nav a.link.hide-sm { display: none; }
+}
+@media (max-width: 560px) {
+  .devices { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .faces { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .face-card { padding: 12px; }
-  .face-card .shot { height: 160px; } .face-card .shot img { max-height: 160px; }
+  .face-card .shot { height: 170px; margin-bottom: 10px; }
+  .face-card .title { font-size: 16px; flex-wrap: wrap; gap: 4px 8px; }
   .face-card .about { display: none; }
+  .face-card .foot { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .hero { padding-top: 48px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 10px; }
+  .cta .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .bar { padding: 10px; bottom: 10px; }
+  .bar .sum { flex-basis: 100%; padding: 0 4px; font-size: 13px; }
+  .bar .btn { flex: 1; justify-content: center; padding: 11px 10px; font-size: 13.5px; }
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="hero">
-    <h1>Faces for your <span>Xiaomi</span> watch</h1>
-    <p>A running face, Flappy Bird, Tic Tac Toe, a calculator and an expense tracker. Free and open source.
-      Pick your watch, pick what you want, download, then install with Gadgetbridge.</p>
-    <div class="badges">
-      <span class="badge">9 devices</span><span class="badge">No root</span><span class="badge">No modded apps</span>
-      <span class="badge"><a id="repoLink" href="#">Source on GitHub</a></span>
-    </div>
-  </header>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="3.5"/><path d="M9 6V3h6v3M9 18v3h6v-3M12 9.5V12l1.6 1.2"/></svg></span>Band Face Pack</a>
+    <span class="grow"></span>
+    <a class="link hide-sm" href="#step1">Download</a>
+    <a class="link hide-sm" href="https://hassan-xsf.github.io/band-face-viewer/" target="_blank" rel="noopener">Try in browser</a>
+    <a class="link" id="repoLink" href="#">GitHub</a>
+  </div>
+</nav>
 
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><b>Free</b> Open source · No root · No modded apps</span>
+    <h1>Better faces for your <em>Xiaomi</em> watch</h1>
+    <p class="lead">A running face with real walk sessions, Flappy Bird, Tic Tac Toe, a calculator and an expense tracker.
+      Pick your watch, tick what you want, install with Gadgetbridge.</p>
+    <div class="cta">
+      <a class="btn primary" href="#step1">Pick your watch
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+      <a class="btn" href="https://hassan-xsf.github.io/band-face-viewer/" target="_blank" rel="noopener">Try them in your browser</a>
+    </div>
+    <div class="stats">
+      <div><b>5</b><span>Faces &amp; games</span></div>
+      <div><b>9</b><span>Devices</span></div>
+      <div><b>3</b><span>Native apps</span></div>
+      <div><b>0 €</b><span>Forever</span></div>
+    </div>
+    <div class="showcase" id="showcase"></div>
+  </div>
+</header>
+
+<main class="wrap">
   <section class="step" id="step1">
-    <div class="step-head"><div class="step-num">1</div><h2>Pick your watch</h2></div>
-    <div class="grid devices" id="devices"><p class="sub">Loading…</p></div>
+    <div class="step-head"><div><div class="k">Step 1</div><h2>Pick your watch</h2></div></div>
+    <div class="grid devices" id="devices"><p class="subnote">Loading…</p></div>
   </section>
 
   <section class="step locked" id="step2">
-    <div class="step-head"><div class="step-num">2</div><h2>Pick what you want</h2><span class="hint" id="pickHint">Tap to select</span></div>
+    <div class="step-head"><div><div class="k">Step 2</div><h2>Pick what you want</h2></div><span class="hint" id="pickHint">Tap a card to select it</span></div>
     <div class="grid faces" id="faces"></div>
     <div id="appsBox"></div>
     <div class="note" id="devNote"></div>
   </section>
 
   <section class="step done" id="step3">
-    <div class="step-head"><div class="step-num">3</div><h2>Install it</h2></div>
-    <div class="note">
-      <b>Downloads started.</b> If your browser asks to allow multiple downloads, say yes.
-      <ol>
-        <li>Get <a href="https://gadgetbridge.org/" target="_blank" rel="noopener">Gadgetbridge</a> on your Android phone and pair your watch (needs its auth key once:
-          <a id="installLink" href="#" target="_blank" rel="noopener">step-by-step guide</a>).</li>
-        <li>Open each <code>.face</code> file with Gadgetbridge and tap <b>Install</b>.</li>
-        <li>On the watch, long-press the watchface, swipe to the new one and tap it.</li>
-        <li id="appStep" hidden>For apps: open the installer face on the band, tap <b>Install</b>, then switch the app <b>On</b> in Settings → Manage apps.</li>
-      </ol>
-      Tip: open this page on your phone and the files land right where Gadgetbridge can open them.
+    <div class="step-head"><div><div class="k">Step 3</div><h2>Install it</h2></div></div>
+    <div class="banner-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Download started. If your browser asks to allow multiple downloads, say yes.</div>
+    <div class="how">
+      <div class="card"><div class="n">1</div><h3>Pair with Gadgetbridge</h3>
+        <p>Get <a href="https://gadgetbridge.org/" target="_blank" rel="noopener">Gadgetbridge</a> on Android and add your watch with its auth key. One time only: <a id="installLink" href="#" target="_blank" rel="noopener">step-by-step guide</a>.</p></div>
+      <div class="card"><div class="n">2</div><h3>Open the .face</h3>
+        <p>Tap each downloaded <b>.face</b> file, open it with Gadgetbridge and press <b>Install</b>.</p></div>
+      <div class="card"><div class="n">3</div><h3>Switch to it</h3>
+        <p>On the watch, long-press the watchface, swipe to the new one and tap it.<span id="appStep" hidden> For apps: switch to the installer, tap <b>Install</b>, then turn the app <b>On</b> in Settings → Manage apps. After the band restarts, install it again.</span></p></div>
     </div>
+    <div class="note ok"><span class="dot"></span><span>Tip: open this page on your phone, so the files land right where Gadgetbridge can open them.</span></div>
+    <div class="note ok"><span class="dot"></span><span>Want to see a face first? <a href="https://hassan-xsf.github.io/band-face-viewer/" target="_blank" rel="noopener">Band Face Viewer</a> runs it in your browser.</span></div>
+    <div class="note"><span class="dot"></span><span>Stuck or found a bug? <a id="issueLink" href="#">Open an issue</a> or email <a href="mailto:hassandev45@gmail.com">hassandev45@gmail.com</a>.</span></div>
   </section>
+</main>
 
-  <footer>
-    Made by <a href="https://github.com/hassan-xsf">Hassan</a> · built on m0tral's EasyFace and native app platform ·
-    Flappy Bird art belongs to its owners (personal use).
-  </footer>
-</div>
+<footer>
+  <div class="wrap">
+    <div><b>Band Face Pack</b> · made by <a href="https://github.com/hassan-xsf">Hassan</a> · <a href="mailto:hassandev45@gmail.com">hassandev45@gmail.com</a><br>
+      Try faces before installing in <a href="https://hassan-xsf.github.io/band-face-viewer/" target="_blank" rel="noopener">Band Face Viewer</a></div>
+    <div>Built on <a href="https://github.com/m0tral" target="_blank" rel="noopener">m0tral</a>'s EasyFace and native app platform · Flappy Bird art belongs to its owners</div>
+  </div>
+</footer>
 
 <div class="bar" id="bar" role="region" aria-label="Download">
   <div class="inner">
     <div class="sum" id="sum"></div>
     <a class="btn" id="zipBtn" href="#">All as .zip</a>
-    <button class="btn primary" id="dlBtn">Download</button>
+    <button class="btn primary" id="dlBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>
+      <span id="dlLabel">Download</span></button>
   </div>
 </div>
 
@@ -152,63 +270,69 @@ const $ = id => document.getElementById(id);
 // owner/repo from <owner>.github.io/<repo>/, so forks link to their own releases
 const gh = location.hostname.match(/^([\w-]+)\.github\.io$/);
 const OWNER = gh ? gh[1] : "hassan-xsf";
-const REPO = (gh && location.pathname.split("/")[1]) || "miband10pro-faces";
+const REPO = (gh && location.pathname.split("/")[1]) || "band-face-pack";
 const REPO_URL = `https://github.com/${OWNER}/${REPO}`;
 const dl = file => `${REPO_URL}/releases/latest/download/${file}`;
 $("repoLink").href = REPO_URL;
 $("installLink").href = `${REPO_URL}/blob/main/INSTALL.md`;
+$("issueLink").href = `${REPO_URL}/issues/new/choose`;
 
 const kb = n => n >= 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.round(n / 1024) + " KB";
 const store = { get: k => { try { return localStorage.getItem(k); } catch { return null; } },
                 set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
 let cat, dev = null, picked = new Set();
 
-function shape(d, maxH) {
-  const k = maxH / Math.max(d.h, d.w * 1.1), round = d.w === d.h && d.r * 2 >= d.w;
-  return `width:${Math.round(d.w * k)}px;height:${Math.round(d.h * k)}px;border-radius:${round ? "50%" : Math.round(d.r * k + 5) + "px"}`;
+const isRound = d => d.w === d.h && d.r * 2 >= d.w;
+// a watch frame of height h showing previews/<device>/<face>.webp
+// the image scales itself inside a box of height h (keeps its proportions on any card size)
+function watch(d, face, h, alt) {
+  const r = Math.min(d.r, d.w / 2) + 5, round = isRound(d) ? "50%" : `${(r / (d.w + 10) * 100).toFixed(1)}% / ${(r / (d.h + 10) * 100).toFixed(1)}%`;
+  return `<div class="wbox" style="height:${h + 10}px"><img class="watch" src="previews/${d.id}/${face}.webp" alt="${alt}"
+    loading="lazy" onload="this.classList.add('in')" width="${d.w}" height="${d.h}" style="border-radius:${round}"></div>`;
 }
 
 function renderDevices() {
   $("devices").innerHTML = cat.devices.map(d => `
     <button class="card" data-dev="${d.id}" aria-pressed="false">
-      <div class="silhouette" style="${shape(d, 90)}"></div>
+      ${watch(d, "stride", 132, d.name)}
       <div class="name">${d.name}</div>
-      <div class="sub">${d.w === d.h ? d.w + " round" : d.w + " × " + d.h}${d.id === "band10pro" ? " · tested" : ""}</div>
+      <div class="sub">${isRound(d) ? d.w + " px round" : d.w + " × " + d.h}</div>
+      <span class="chip ${d.id === "band10pro" ? "ok" : ""}">${d.id === "band10pro" ? "Tested" : "Beta"}</span>
     </button>`).join("");
   $("devices").querySelectorAll(".card").forEach(b => b.onclick = () => pickDevice(b.dataset.dev, true));
 }
 
 function faceCard(id, name, kind, about, previewId) {
-  const f = cat.files[dev.id][id], round = dev.w === dev.h;
+  const f = cat.files[dev.id][id];
   return `<button class="card face-card" data-face="${id}" aria-pressed="${picked.has(id)}">
-      <span class="tick" aria-hidden="true">✓</span>
-      <div class="shot"><img src="previews/${dev.id}/${previewId}.webp" alt="${name} on ${dev.name}" loading="lazy"
-        style="border-radius:${round ? "50%" : Math.min(dev.r, dev.w / 2) * 0.45 + 5 + "px"}"></div>
-      <div><b>${name}</b><span class="kind ${kind}">${kind}</span></div>
+      <div class="shot">${watch(dev, previewId, 212, name + " on " + dev.name)}</div>
+      <div class="title">${name}<span class="kind ${kind}">${kind}</span></div>
       <div class="about">${about}</div>
-      <div class="size">${f.file} · ${kb(f.size)}</div>
+      <div class="foot"><span class="size">${kb(f.size)}</span><span class="pick"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span class="pl">${picked.has(id) ? "Selected" : "Select"}</span></span></div>
     </button>`;
 }
 
 function pickDevice(id, scroll) {
   dev = cat.devices.find(d => d.id === id); if (!dev) return;
   store.set("watch", id);
-  history.replaceState(null, "", "?watch=" + id);
+  history.replaceState(null, "", "?watch=" + id + location.hash);
   document.querySelectorAll("[data-dev]").forEach(b => b.setAttribute("aria-pressed", b.dataset.dev === id));
   picked = new Set([...picked].filter(f => cat.files[id][f]));
   $("faces").innerHTML = cat.faces.map(f => faceCard(f.id, f.name, f.kind, f.about, f.id)).join("");
   const apps = cat.apps.filter(a => cat.files[id][a.id]);
   $("appsBox").innerHTML = apps.length ? `<div class="subhead">Or as real apps <span class="kind App">App</span></div>
-    <p class="sub" style="color:var(--muted);margin:-4px 0 12px">Same games, but they live in the band's app list so you keep your normal watchface. Firmware 3.201.026 (tested), 3.201.016 and 3.101.043.</p>
-    <div class="grid faces">${apps.map(a => faceCard(a.id, a.name, "App", "Installs into the app list", a.preview)).join("")}</div>` : "";
+    <p class="subnote">The same games, living in the band's app list, so you keep your normal watchface. Install the file, switch to it on the band and tap <b>Install</b>, then turn the app <b>On</b> in Settings → Manage apps. Firmware 3.201.026 (tested), 3.201.016 and 3.101.043. Reinstall after the band restarts.</p>
+    <div class="grid faces">${apps.map(a => faceCard(a.id, a.name, "App", "Installs into the app list next to the stock apps", a.preview)).join("")}</div>` : "";
   document.querySelectorAll("[data-face]").forEach(b => b.onclick = () => toggle(b));
-  $("devNote").innerHTML = id === "band10pro"
-    ? "<b>Tested on the Mi Band 10 Pro</b> (Global 3.201.026)."
+  const ask = `<a href="${REPO_URL}/issues/new/choose">Tell us how it goes</a>`;
+  $("devNote").className = "note" + (id === "band10pro" ? " ok" : "");
+  $("devNote").innerHTML = '<span class="dot"></span><span>' + (id === "band10pro"
+    ? "<b>Tested on the Mi Band 10 Pro</b> (Global 3.201.026). Everything here runs on the real band."
     : id === "band9pro" || id === "band8pro"
-      ? `<b>${dev.name}:</b> same screen as the Band 10 Pro, so the faces are unchanged. Not tested on a real ${dev.name} yet. <a href="${REPO_URL}/issues/new/choose">Tell us how it goes</a>.`
-      : `<b>${dev.name}:</b> faces are scaled to fit this screen. Not tested on a real ${dev.name} yet. <a href="${REPO_URL}/issues/new/choose">Tell us how it goes</a>.`;
+      ? `<b>Beta on the ${dev.name}.</b> Same screen as the Band 10 Pro, so the faces are unchanged, but nobody has tried them on a real one yet. ${ask}.`
+      : `<b>Beta on the ${dev.name}.</b> Faces are scaled to fit this screen, but nobody has tried them on a real one yet. ${ask}.`) + "</span>";
   $("zipBtn").href = dl(dev.zip);
-  $("zipBtn").textContent = `All as .zip (${kb(dev.zipSize)})`;
+  $("zipBtn").textContent = `All as .zip · ${kb(dev.zipSize)}`;
   $("step2").classList.remove("locked");
   $("step3").classList.remove("show");
   updateBar();
@@ -219,6 +343,7 @@ function toggle(b) {
   const id = b.dataset.face;
   picked.has(id) ? picked.delete(id) : picked.add(id);
   b.setAttribute("aria-pressed", picked.has(id));
+  b.querySelector(".pl").textContent = picked.has(id) ? "Selected" : "Select";
   updateBar();
 }
 
@@ -226,11 +351,11 @@ function updateBar() {
   const files = [...picked].map(f => cat.files[dev.id][f]);
   const total = files.reduce((s, f) => s + f.size, 0);
   $("sum").innerHTML = files.length
-    ? `<b>${files.length}</b> for <b>${dev.name}</b> · ${kb(total)}`
-    : `Pick faces for <b>${dev.name}</b>, or grab everything as a zip`;
+    ? `<b>${files.length} selected</b> for ${dev.name} · ${kb(total)}`
+    : `<b>${dev.name}</b> · pick faces, or get everything`;
   $("dlBtn").disabled = !files.length;
-  $("dlBtn").textContent = files.length > 1 ? `Download ${files.length} files` : "Download";
-  $("pickHint").textContent = files.length ? `${files.length} selected` : "Tap to select";
+  $("dlLabel").textContent = files.length > 1 ? `Download ${files.length}` : "Download";
+  $("pickHint").textContent = files.length ? `${files.length} selected` : "Tap a card to select it";
   $("bar").classList.add("show");
 }
 
@@ -252,6 +377,10 @@ function showDone() {
 
 fetch("catalog.json").then(r => r.json()).then(c => {
   cat = c; renderDevices();
+  const by = id => cat.devices.find(d => d.id === id);
+  $("showcase").innerHTML = [["watchs3", "flappy", 190, "Watch S3", 1], ["redmiwatch4", "tictactoe", 220, "Redmi Watch 4"],
+    ["band10pro", "stride", 300, "Band 10 Pro"], ["redmiwatch6", "calculator", 220, "Redmi Watch 6"], ["band10", "expenses", 230, "Band 10", 1]]
+    .map(([d, f, h, label, side]) => `<div class="item${side ? " side" : ""}${h === 300 ? " big" : ""}">${watch(by(d), f, h, f + " on " + label)}<span>${label}</span></div>`).join("");
   const want = new URLSearchParams(location.search).get("watch") || store.get("watch");
   if (want) pickDevice(want, false);
 }).catch(() => { $("devices").innerHTML = `<p class="err">Couldn't load the list. <a href="${REPO_URL}/releases/latest">Open the releases page</a> instead.</p>`; });
